@@ -91,6 +91,6 @@ public class EmpresaTest {
 		this.empresa2.darDeAlta("Bruno","Batistuta",224,LocalDate.of(1976, 6, 30),false,true);
 		this.empresa2.buscarEmpleado(224).setFechaInicio(LocalDate.of(1999, 11, 1));
 		this.empresa2.buscarEmpleado(224).cargarContratoPorHoras(LocalDate.of(2000, 2, 1),150,130,LocalDate.of(2014, 8, 1));
-		assertNull(this.empresa2.recibosSueldo().get(1));
+		assertEquals(1,this.empresa2.recibosSueldo().size());
 	}
 }

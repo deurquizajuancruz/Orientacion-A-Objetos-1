@@ -38,7 +38,7 @@ public class Empresa {
 	} //devolver en una lista todos los empleados con contratos actuales (fecha de inicio mas reciente) con contrato vencido(cuando la fecha de fin es <=fecha actual)
 	
 	public List<Recibo> recibosSueldo(){
-		return this.empleados.stream().map(x->x.generarRecibo()).collect(Collectors.toList());
+		return this.empleados.stream().map(x->x.generarRecibo()).filter(r->r!=null).collect(Collectors.toList());
 	}//devolver una lista de recibos de todos los empleados activos
 	//recorrer toda la lista de empleados, fijarse cual esta activo, generar recibo para cada empleado activo y devolver una lista con todos esos recibos
 }
